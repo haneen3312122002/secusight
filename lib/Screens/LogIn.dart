@@ -22,7 +22,7 @@ class Login extends StatelessWidget {
                   Center(
                     child: Container(
                       width: MediaQuery.of(context).size.width *
-                          0.4, // تحديد عرض الحقول بناءً على حجم الشاشة
+                          0.9, // تحديد عرض الحقول بناءً على حجم الشاشة
                       padding: const EdgeInsets.all(20),
                       decoration: BoxDecoration(
                           //  borderRadius: BorderRadius.circular(15),
@@ -34,8 +34,9 @@ class Login extends StatelessWidget {
                   SizedBox(height: constraints.maxHeight * 0.00001),
                   Center(
                     child: Container(
-                      width: MediaQuery.of(context).size.width *
-                          0.4, // تحديد عرض الحقول بناءً على حجم الشاشة
+                      width: MediaQuery.of(context)
+                          .size
+                          .width, // تحديد عرض الحقول بناءً على حجم الشاشة
                       padding: const EdgeInsets.all(20),
                       decoration: BoxDecoration(
                           //  borderRadius: BorderRadius.circular(15),

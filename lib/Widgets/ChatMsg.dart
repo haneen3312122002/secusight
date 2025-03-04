@@ -9,12 +9,12 @@ class ChatMessages extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return Padding(
-      padding: EdgeInsets.symmetric(horizontal: 10),
+      padding: EdgeInsets.symmetric(horizontal: 1),
       child: Column(
         children: [
           Expanded(
             child: ListView.builder(
-              reverse: false,
+              padding: EdgeInsets.symmetric(horizontal: 8, vertical: 10),
               itemCount: messages.length,
               itemBuilder: (context, index) {
                 String sender = messages[index].keys.first;
@@ -24,17 +24,18 @@ class ChatMessages extends StatelessWidget {
                   alignment:
                       isUser ? Alignment.centerRight : Alignment.centerLeft,
                   child: Container(
-                    margin: EdgeInsets.all(30),
+                    margin: EdgeInsets.symmetric(vertical: 8, horizontal: 12),
                     padding: EdgeInsets.all(12),
                     decoration: BoxDecoration(
                       color: isUser
-                          ? Colors.cyanAccent.withOpacity(0.7)
+                          ? const Color.fromARGB(255, 10, 191, 191)
+                              .withOpacity(0.7)
                           : const Color.fromARGB(121, 224, 224, 224),
                       borderRadius: BorderRadius.circular(15),
                     ),
                     child: Text(
                       message,
-                      style: TextStyle(fontSize: 16),
+                      style: TextStyle(fontSize: 13),
                     ),
                   ),
                 );

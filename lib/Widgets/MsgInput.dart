@@ -35,9 +35,10 @@ class _MessageInputState extends State<MessageInput> {
   Widget build(BuildContext context) {
     return Center(
         child: Container(
-      margin: EdgeInsets.all(40),
-      width: ScreenSize.getWidth(context) * 0.7,
-      height: 80, //padding for the things in the container
+      margin: EdgeInsets.all(15),
+      width: ScreenSize.getWidth(context),
+      height: ScreenSize.getWidth(context) *
+          0.2, //padding for the things in the container
       padding: EdgeInsets.symmetric(horizontal: 40, vertical: 20),
       decoration: BoxDecoration(
         color: Colors.transparent,

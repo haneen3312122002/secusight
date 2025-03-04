@@ -23,7 +23,7 @@ class AuthButtons extends StatelessWidget {
       mainAxisAlignment: MainAxisAlignment.center,
       children: [
         SizedBox(
-          width: MediaQuery.of(context).size.width * 0.15,
+          width: MediaQuery.of(context).size.width * 0.4,
           child: ElevatedButton(
             onPressed: _handleLogin,
             style: ElevatedButton.styleFrom(
@@ -37,13 +37,13 @@ class AuthButtons extends StatelessWidget {
             ),
             child: const Text(
               'LogIn',
-              style: TextStyle(fontSize: 16),
+              style: TextStyle(fontSize: 14),
             ),
           ),
         ),
         const SizedBox(width: 10),
         SizedBox(
-          width: MediaQuery.of(context).size.width * 0.15,
+          width: MediaQuery.of(context).size.width * 0.4,
           child: ElevatedButton(
             //when pressed call the function
             onPressed: () => _handleSignUp(context),
@@ -57,7 +57,7 @@ class AuthButtons extends StatelessWidget {
             ),
             child: const Text(
               'SignUp',
-              style: TextStyle(fontSize: 16),
+              style: TextStyle(fontSize: 14),
             ),
           ),
         ),

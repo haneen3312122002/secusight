@@ -1,7 +1,9 @@
 import 'package:flutter/material.dart';
+import 'package:secusight/Functions/ScreenSize.dart';
 import 'package:secusight/Widgets/ChatMsg.dart';
 import 'package:secusight/Widgets/MsgInput.dart';
 import 'package:secusight/Functions/ChatFunctions.dart';
+import 'package:secusight/Screens/MyReports.dart';
 
 class UploadFiles extends StatefulWidget {
   @override
@@ -40,29 +42,56 @@ class _ReportUploadScreenState extends State<UploadFiles> {
       body: SafeArea(
         child: Column(
           children: [
-            Container(
-              width: screenWidth,
-              padding: EdgeInsets.symmetric(vertical: 20),
-              child: Column(
-                children: [
-                  Image.asset(
-                    'assets/AppLogo.png',
-                    height: 100,
-                  ),
-                  SizedBox(height: 10),
-                  Text(
-                    'Upload File',
-                    style: TextStyle(fontSize: 22, fontWeight: FontWeight.bold),
-                  ),
-                ],
+            Align(
+              alignment: Alignment.topLeft,
+              child: Container(
+                margin: EdgeInsets.only(left: 30, top: 20),
+                width: 100,
+                height: 100,
+                child: IconButton(
+                  icon:
+                      Icon(Icons.history), // أيقونة تعبر عن التقارير التاريخية
+                  tooltip: 'My Reports',
+                  onPressed: () {
+                    Navigator.push(
+                      context,
+                      MaterialPageRoute(builder: (context) => MyReports()),
+                    );
+                  },
+                ),
               ),
             ),
+            if (messages.isEmpty)
+              Expanded(
+                flex: 7,
+                child: Container(
+                  alignment: Alignment.center,
+                  // color: Colors.red,
+                  // margin: EdgeInsets.all(2),
+                  width: screenWidth,
+
+                  // padding: EdgeInsets.symmetric(vertical: 20),
+                  child: Column(
+                    mainAxisAlignment: MainAxisAlignment.center,
+                    children: [
+                      Image.asset(
+                        'assets/AppLogo.png',
+                        height: ScreenSize.getHeight(context) * 0.3,
+                        width: ScreenSize.getWidth(context) * 0.5,
+                      ),
+                    ],
+                  ),
+                ),
+              ),
             Expanded(
-              child:
-                  ChatMessages(messages: messages, isProcessing: isProcessing),
+              flex: 3,
+              child: messages.isEmpty
+                  ? SizedBox()
+                  : ChatMessages(
+                      messages: messages, isProcessing: isProcessing),
             ),
             Padding(
-              padding: EdgeInsets.symmetric(horizontal: 10, vertical: 10),
+              padding: EdgeInsets.symmetric(horizontal: 10, vertical: 1),
               child: MessageInput(
                   onSend: _handleUserMessage), //send the function as par
             ),
