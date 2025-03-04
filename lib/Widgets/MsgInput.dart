@@ -3,7 +3,7 @@ import 'package:file_picker/file_picker.dart';
 import 'package:secusight/Functions/ScreenSize.dart';
 
 class MessageInput extends StatefulWidget {
-  final Function(String) onSend;
+  final Function(String) onSend; //recieve string par (_handleMsg)
 
   MessageInput({required this.onSend});
 
@@ -26,8 +26,8 @@ class _MessageInputState extends State<MessageInput> {
 
   void _sendMessage() {
     if (_messageController.text.isNotEmpty) {
-      widget.onSend(_messageController.text);
-      _messageController.clear();
+      widget.onSend(_messageController.text); //send msg
+      _messageController.clear(); //clear the field
     }
   }
 

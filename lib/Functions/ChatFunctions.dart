@@ -9,11 +9,12 @@ void handleUserMessage(
   Function onProcessingEnd,
 ) {
   setState(() {
-    messages.add({"user": message});
+    messages.add({"user": message}); //key: user, val:message
     onProcessingStart();
   });
-
+  //after 3sec:
   Future.delayed(Duration(seconds: 3), () {
+    //function
     setState(() {
       onProcessingEnd();
       messages.add({"bot": "تم تحليل التقرير. مستوى المخاطر: منخفض"});
