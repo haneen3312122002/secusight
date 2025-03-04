@@ -1,8 +1,8 @@
 import 'package:flutter/material.dart';
 import 'package:flutter/services.dart';
-import 'package:secusight/Screens/UploadFiles.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter/scheduler.dart';
+import 'package:secusight/Screens/UploadFiles.dart';
 
 class AuthButtons extends StatelessWidget {
   const AuthButtons({super.key});
